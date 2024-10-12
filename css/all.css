@@ -14,14 +14,17 @@
   font-variant: normal;
   text-rendering: auto;
   line-height: 1; }
-section#about.about.py-5 {
+
+  section#about.about.py-5 {
   background-attachment: fixed;
   background-image: url("../img/01.jpg");
 }
+
 section#store.store.py-5 {
   background-attachment: fixed;
   background-image: url("../img/pattern.jpeg");
 }
+
 .fa-lg {
   font-size: 1.33333em;
   line-height: 0.75em;
@@ -124,8 +127,12 @@ section#store.store.py-5 {
 
 @keyframes fa-spin {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+}
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
