@@ -14,7 +14,14 @@
   font-variant: normal;
   text-rendering: auto;
   line-height: 1; }
-
+section#about.about.py-5 {
+  background-attachment: fixed;
+  background-image: url("../img/01.jpg");
+}
+section#store.store.py-5 {
+  background-attachment: fixed;
+  background-image: url("../img/pattern.jpeg");
+}
 .fa-lg {
   font-size: 1.33333em;
   line-height: 0.75em;
