@@ -26,6 +26,10 @@ body {
   color: var(--mainPink);
   font-size: 1.5rem;
   transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
 }
 .nav-link:hover {
   color: var(--mainBlack);
@@ -90,21 +94,38 @@ body {
   background: rgba(255, 255, 255, 0.5);
   width: 0;
   overflow: hidden;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
 .show-cart {
   width: 18rem;
   padding: 2rem 1.5rem;
   transform: rotateY(-360deg);
+  -webkit-transform: rotateY(-360deg);
+  -moz-transform: rotateY(-360deg);
+  -ms-transform: rotateY(-360deg);
+  -o-transform: rotateY(-360deg);
 }
 .cart-item {
   transition: all 2s ease-in-out;
+  -webkit-transition: all 2s ease-in-out;
+  -moz-transition: all 2s ease-in-out;
+  -ms-transition: all 2s ease-in-out;
+  -o-transition: all 2s ease-in-out;
 }
+
 
 /* end of cart */
 /* cart item */
 .cart-item-remove {
   color: var(--mainPink);
   transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
 }
 .cart-item-remove:hover {
   transform: scale(1.1);

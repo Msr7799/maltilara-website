@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auth Page</title>
+  <!-- مكتبة jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- مكتبة CryptoJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+     body {
+      background-image: url('img/BG.PNG');
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-family: 'Roboto', sans-serif;
+     }
+    .login-page {
+      background-color: #FFEBEE;
+      width: 360px;
+      padding: 8% 0 0;
+      margin: auto;
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 600px;
+        position: relative;
+      z-index: 1;
+      background: #FEB6C1;
+      max-width: 360px;
+      padding: 60px;
+      border-radius: 4px;
+      text-align: center;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+    .form input {
+      font-family: 'Roboto', sans-serif;
+      outline: 0;
+      background: lightgray;
+      width: 100%;
+      border-radius: 6px;
+      margin: 0 0 15px;
+      padding: 15px;
+      border-color: black;
+      font-size: 14px;
+    }
+    .form button {
+      font-family: 'Roboto', sans-serif;
+      text-transform: uppercase;
+      outline: 0;
+      background: #758DA3;
+      width: 100%;
+      border-radius: 10px;
+      padding: 15px;
+      color: #F8EEEC;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .form button:hover, .form button:active, .form button:focus {
+      background: black;
+    }
+    .form .message {
+      margin: 15px 0 0;
+      color: black;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    .form .message a {
+      color: #F5F5F5;
+      text-decoration: none;
+    }
+    .form .register-form {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-page">
+    <div class="form">
+      <form class="register-form">
+        <input type="text" placeholder="name" required/>
+        <input type="password" placeholder="password" required/>
+        <input type="email" placeholder="email address" required/>
+        <button type="button" onclick="register()">Create</button>
+        <p class="message">Already registered? <a href="#" onclick="toggleForms()">Sign In</a></p>
+      </form>
+      <form class="login-form">
+        <input type="text" placeholder="username" required/>
+        <input type="password" placeholder="password" required/>
+        <button type="button" onclick="login()">Login</button>
+        <p class="message">Not registered? <a href="#" onclick="toggleForms()">Create an account</a></p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function toggleForms() {
+      $('form').animate({height: 'toggle', opacity: 'toggle'}, 'slow');
+    }
+
+
+    function login() {
+      var username = document.querySelector('.login-form input[type="text"]').value;
+      var password = document.querySelector('.login-form input[type="password"]').value;
+
+      var hashedPassword = CryptoJS.SHA256(password).toString();
+
+      console.log('Username: ' + username);
+      console.log('Hashed Password: ' + hashedPassword);
+
+      alert('Logged in successfully!');
+      window.location.href = 'index.html';
+    }
+
+    function register() {
+      var name = document.querySelector('.register-form input[type="text"]').value;
+      var password = document.querySelector('.register-form input[type="password"]').value;
+      var email = document.querySelector('.register-form input[type="email"]').value;
+
+      var hashedPassword = CryptoJS.SHA256(password).toString();
+
+      console.log('Name: ' + name);
+      console.log('Hashed Password: ' + hashedPassword);
+      console.log('Email: ' + email);
+
+      alert('Registered successfully with hashed password!');
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>
